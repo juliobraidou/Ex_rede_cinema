@@ -47,19 +47,19 @@ cinema/
 
 ### Casos de Uso
 Visão geral dos atores **Funcionário/Administrador** e **Espectador** e suas interações com o sistema.
-→ [`diagramas/UC.md`](diagramas/UC.md)
+→ [`diagramas/UC.md`](cinema/diagramas/UC.md)
 
 ### Diagrama de Classes
 Entidades do domínio com atributos e relacionamentos.
-→ [`diagramas/classes.md`](diagramas/classes.md)
+→ [`diagramas/classes.md`](cinema/diagramas/classes.md)
 
 ### Diagramas de Atividade
 Fluxos dos principais casos de uso: cadastrar sessão, registrar público e gerar relatório.
-→ [`diagramas/atividades.md`](diagramas/atividades.md)
+→ [`diagramas/atividades.md`](cinema/diagramas/atividades.md)
 
 ### Diagramas de Sequência
 Interação entre as camadas View, Controller, Service e Repository com persistência em SQLite.
-→ [`diagramas/sequencias.md`](diagramas/sequencias.md)
+→ [`diagramas/sequencias.md`](cinema/diagramas/sequencias.md)
 
 ---
 
@@ -67,9 +67,9 @@ Interação entre as camadas View, Controller, Service e Repository com persist�
 
 | Documento | Descrição |
 |---|---|
-| [`requisitos-funcionais.md`](requisitos/RF.md) | RF01 a RF11 |
-| [`regras-de-negocio.md`](requisitos/RN.md) | RN01 a RN08 |
-| [`requisitos-nao-funcionais.md`](requisitos/RNF.md) | RNF01 a RNF05 |
+| [`requisitos-funcionais.md`](cinema/requisitos/RF.md) | RF01 a RF11 |
+| [`regras-de-negocio.md`](cinema/requisitos/RN.md) | RN01 a RN08 |
+| [`requisitos-nao-funcionais.md`](cinema/requisitos/RNF.md) | RNF01 a RNF05 |
 
 ---
 
