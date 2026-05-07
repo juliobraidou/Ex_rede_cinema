@@ -1,16 +1,36 @@
-# Sistema de Gerenciamento – Rede de Cinemas
+# 🎬 Rede de Cinemas – Sistema de Gerenciamento
 
-Documentação de Engenharia de Software para o sistema de gerenciamento de uma rede de cinemas.
+Projeto acadêmico desenvolvido na disciplina de **Engenharia de Software**, com o objetivo de modelar e implementar um sistema de informação para gerenciamento de uma rede de cinemas com múltiplas unidades.
 
-## Estrutura do repositório
+---
+
+## 📋 Sobre o projeto
+
+O sistema centraliza o controle de filmes em cartaz, sessões, registro de público e geração de relatórios, garantindo confiabilidade e facilidade de evolução.
+
+**Principais funcionalidades:**
+- Cadastro de cinemas, salas e filmes
+- Controle de sessões com validação de conflito de horário
+- Registro diário de público por sessão
+- Relatórios de público por sessão, filme e cinema
+- Consulta de elenco, diretores e gêneros
+
+---
+
+## 📁 Estrutura do repositório
 
 ```
 cinema/
+├── README.md
 ├── requisitos/
 │   ├── requisitos-funcionais.md
-│   ├── requisitos-nao-funcionais.md
-│   └── regras-de-negocio.md
+│   ├── regras-de-negocio.md
+│   └── requisitos-nao-funcionais.md
 └── diagramas/
+    ├── UC.md
+    ├── classes.md
+    ├── atividades.md
+    ├── sequencias.md
     ├── casos-de-uso.puml
     ├── diagrama-classes.puml
     ├── atividade-cadastrar-sessao.puml
@@ -21,23 +41,64 @@ cinema/
     └── sequencia-gerar-relatorio.puml
 ```
 
-## Como gerar os diagramas
+---
 
-### Opção 1 – Editor online
-Acesse [https://www.plantuml.com/plantuml/uml/](https://www.plantuml.com/plantuml/uml/) e cole o conteúdo de cada arquivo `.puml`.
+## 📐 Diagramas UML
 
-### Opção 2 – JAR local
+### Casos de Uso
+Visão geral dos atores **Funcionário/Administrador** e **Espectador** e suas interações com o sistema.
+→ [`diagramas/UC.md`](diagramas/UC.md)
+
+### Diagrama de Classes
+Entidades do domínio com atributos e relacionamentos.
+→ [`diagramas/classes.md`](diagramas/classes.md)
+
+### Diagramas de Atividade
+Fluxos dos principais casos de uso: cadastrar sessão, registrar público e gerar relatório.
+→ [`diagramas/atividades.md`](diagramas/atividades.md)
+
+### Diagramas de Sequência
+Interação entre as camadas View, Controller, Service e Repository com persistência em SQLite.
+→ [`diagramas/sequencias.md`](diagramas/sequencias.md)
+
+---
+
+## 📄 Requisitos
+
+| Documento | Descrição |
+|---|---|
+| [`requisitos-funcionais.md`](requisitos/RF.md) | RF01 a RF11 |
+| [`regras-de-negocio.md`](requisitos/RN.md) | RN01 a RN08 |
+| [`requisitos-nao-funcionais.md`](requisitos/RNF.md) | RNF01 a RNF05 |
+
+---
+
+## 🔗 Rastreabilidade
+
+| Caso de Uso | Requisito | Regra de Negócio |
+|---|---|---|
+| Cadastrar Sessão | RF05 | RN01, RN04, RN05, RN06 |
+| Registrar Público | RF07 | RN02, RN03 |
+| Gerar Relatório | RF11 | RN08 |
+
+---
+
+## 🏗️ Arquitetura
+
+O sistema segue a arquitetura em camadas **MVC + Service + Repository** com persistência em **SQLite**.
+
+```
+View → Controller → Service → Repository → SQLite
+```
+
+---
+
+## 🛠️ Como gerar os diagramas
+
+Com o [PlantUML JAR](https://plantuml.com/download):
+
 ```bash
 java -jar plantuml.jar diagramas/*.puml
 ```
 
-### Opção 3 – VS Code
-Instale a extensão **PlantUML** (jebbs.plantuml) e use `Alt+D` para preview.
-
-## Rastreabilidade
-
-| Requisito | Regra de Negócio | Diagrama de Atividade | Diagrama de Sequência |
-|---|---|---|---|
-| RF05 – Cadastrar Sessão | RN01, RN04, RN05, RN06 | atividade-cadastrar-sessao | sequencia-cadastrar-sessao |
-| RF07 – Registrar Público | RN02, RN03 | atividade-registrar-publico | sequencia-registrar-publico |
-| RF11 – Gerar Relatório | RN08 | atividade-gerar-relatorio | sequencia-gerar-relatorio |
+Ou acesse o [editor online](https://www.plantuml.com/plantuml/uml/) e cole o conteúdo de cada `.puml`.
